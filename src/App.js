@@ -1,13 +1,10 @@
-// import logo from './logo.svg';
 import './App.css';
-import Form from './components/inputText'
+import MainScn from './routes/routers'
 
-import Reg from './screens/registration'
-import Login from './screens/login'
+
 function App() {
   return (
-    <Reg />
-    // <Login/>
+    <MainScn/>
   );
 }
 

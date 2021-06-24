@@ -1,27 +1,33 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Form from '../components/inputText'
 import Button from '../components/button'
 import { Link } from '@material-ui/core';
 
-function reg() {
+
+function Reg() {
+    const [opacity, setOpacity] = useState(0.5);
+
+ 
+
     return(
-        <div style={{backgroundColor:'#ddd', justifyContent:'center',display:'flex',height:'100vh',alignItems:'center',}}>
-            <div style={{backgroundColor:"white",padding:'70px',height:'60vh',textAlign:'center',borderRadius:'50px'}} >
+        <div style={{backgroundImage:`url("https://wallpaperaccess.com/full/1119975.jpg")`, justifyContent:'center',display:'flex',height:'100vh',alignItems:'center',}}>
+            <div onMouseLeave={()=>{setOpacity("0.5")}} onMouseEnter={()=>{setOpacity("2")}} style={{backgroundColor:"white",padding:'50px',height:'55vh',textAlign:'center',borderRadius:'50px',opacity:opacity}} >
             <h2>REGISTRATION</h2>
-            <Form placeholder="sdasd" name={"First Name"} />
+            <Form name={"First Name"} />
             <Form name={"Last Name"} />
             <Form name={"Email"} />
             <Form name={"Address"} />
             <Form name={"National ID"} />
-            <Form name={"Country"} />  
-            <Form name={"Password"} />  
-            <Form name={"Confirm Password"} />  
-            <Button  title="Sign up"  />
+            <Form type="password" name={"Password"} />  
+            <Form type="password" name={"Confirm Password"} />  
+            <div style={{marginTop:'20px'}}>
+            <Button onClick={()=>{alert("Registartion Completed")}}  title="Sign up"  />
+            </div>
             <div style={{padding:'20px'}}>
-            <Link href="#" onClick={()=>{console.log("hello");}}>Already Register</Link>            
+            <Link onClick={()=>{window.location='/signin'}}>Already Register</Link>            
             </div>
             </div>
         </div>
     )
 }
-export default reg;
+export default Reg;
